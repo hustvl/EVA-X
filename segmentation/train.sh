@@ -1,0 +1,4 @@
+python train.py config/resnet/unet_resnet50_biovil_shenzhen_50ep.py
+python train.py config/resnet/unet_resnet50_mgca_shenzhen_50ep.py
+python train.py config/resnet/unet_resnet50_medklip_shenzhen_50ep.py
+python train.py config/resnet/unet_resnet50_imagenet_shenzhen_50ep.py

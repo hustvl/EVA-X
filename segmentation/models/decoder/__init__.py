@@ -1,0 +1,1 @@
+from .vitmatte_decoder import ViTMatte_Decoder
