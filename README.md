@@ -17,7 +17,7 @@
 
 ## News
 
-* **`Jan 20th, 2024`:**  EVA-X is released!
+* **`Jan xxth, 2024`:**  EVA-X is released!
 
 ## Introduction
 
