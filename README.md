@@ -2,7 +2,7 @@
 
 #  <img src="figs/logo.png" height="28"> *EVA-X*
 
-## EVA-X: A foundation model for general chest X-ray analysis with self-supervised learning </h2>
+## A foundation model for general chest X-ray analysis with self-supervised learning </h2>
 
 
 <p align="center">
