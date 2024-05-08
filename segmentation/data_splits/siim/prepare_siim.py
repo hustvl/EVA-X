@@ -9,7 +9,7 @@ from tqdm import tqdm
 from PIL import Image
 
 def process_siim(
-        folder_path, 
+        folder_path,
         csv_path,
         image_save_path,
         mask_save_path,
@@ -18,7 +18,7 @@ def process_siim(
         train_list_path=None,
         test_list_path=None
         ):
-    
+
     if debug_mode:
         warnings.warn('Debug mode is on. This will save the combined image and mask in the current directory.')
 
@@ -66,7 +66,7 @@ def process_siim(
 
     image_with_mask_num=0
     os.makedirs(image_save_path, exist_ok=True)
-    os.makedirs(mask_save_path, exist_ok=True)    
+    os.makedirs(mask_save_path, exist_ok=True)
 
     for image_id, file_path in tqdm(file_dict.items()):
         rle_mask = data_dict.get(image_id)
@@ -93,13 +93,13 @@ def process_siim(
                     # Combine the image and mask
                     combined_image = Image.blend(image, mask, alpha=0.2)
                     combined_image.save('combined.png')
-                    import ipdb; ipdb.set_trace()                
+                    import ipdb; ipdb.set_trace()
 
                 image.save(_image_save_path)
                 mask.save(_mask_save_path)
 
                 image_with_mask_num = image_with_mask_num + 1
-    
+
     print('Total number of images with mask: {}'.format(image_with_mask_num))
 
     id_list = [x[:-4] for x in os.listdir(image_save_path) if x.endswith('.png') or x.endswith('.jpg')]
@@ -113,9 +113,10 @@ def process_siim(
         train_ids = [x.strip() for x in open(train_list_path, 'r').readlines()]
         test_ids = [x.strip() for x in open(test_list_path, 'r').readlines()]
     except:
-        # print in red
-        print('\033[91m' + 'Warning: No train.txt and test.txt found. Using random split instead.' + '\033[0m')
-        train_ids, test_ids = split_ids(id_list, ratio)
+        raise FileNotFoundError(f"Train_file: {train_list_path} or test_file: {test_list_path} don't exist, check the split file.")
+        # # print in red
+        # print('\033[91m' + 'Warning: No train.txt and test.txt found. Using random split instead.' + '\033[0m')
+        # train_ids, test_ids = split_ids(id_list, ratio)
     print('Total number of images: {}'.format(len(id_list)))
 
     print('Moving images to train folders...')
@@ -141,5 +142,5 @@ if __name__ == '__main__':
     mask_save_path = 'dataset/SIIM_Pneumothorax/masks'
     train_list_path = 'data_splits/siim/train.txt'
     test_list_path = 'data_splits/siim/test.txt'
-    
+
     process_siim(folder_path, csv_path, image_save_path, mask_save_path, 0.7, False, train_list_path, test_list_path)
