@@ -2,7 +2,7 @@
 
 #  <img src="figs/logo.png" height="28"> *EVA-X*
 
-## A foundation model for general chest X-ray analysis with self-supervised learning </h2>
+## A foundation model for general chest X-ray analysis</br> with self-supervised learning </h2>
 
 
 <p align="center">
@@ -15,11 +15,11 @@
 
 #
 
-[Jingfeng Yao](https://github.com/JingfengYao)<sup>1</sup>, [Xinggang Wang](https://scholar.google.com/citations?user=qNCTLV0AAAAJ&hl=zh-CN)<sup>1 📧</sup>, [Yuehao Song]()<sup>1</sup>, [Huangxuan Zhao]()<sup>2</sup>, [Jun Ma]()<sup>3,4,5</sup>, [Yajie Chen]()<sup>1</sup>, [Wenyu Liu]()<sup>1</sup>, [Bo Wang]()<sup>3,4,5,6,7 📧</sup>
+[Jingfeng Yao](https://github.com/JingfengYao)<sup>1</sup>, [Xinggang Wang](https://scholar.google.com/citations?user=qNCTLV0AAAAJ&hl=zh-CN)<sup>1 📧</sup>, [Yuehao Song]()<sup>1</sup>, [Huangxuan Zhao]()<sup>2</sup>,</br> [Jun Ma]()<sup>3,4,5</sup>, [Yajie Chen]()<sup>1</sup>, [Wenyu Liu]()<sup>1</sup>, [Bo Wang]()<sup>3,4,5,6,7 📧</sup>
 
-<sup>1</sup>School of Electronic Information and Communications, Huazhong University of Science and Technology, Wuhan, Hubei, China
+<sup>1</sup>School of Electronic Information and Communications, </br>Huazhong University of Science and Technology, Wuhan, Hubei, China
 
-<sup>2</sup>Department of Radiology, Union Hospital, Tongji Medical College, Huazhong University of Science and Technology, Wuhan, Hubei, China
+<sup>2</sup>Department of Radiology, Union Hospital, Tongji Medical College, </br>Huazhong University of Science and Technology, Wuhan, Hubei, China
 
 <sup>3</sup>Peter Munk Cardiac Centre, University Health Network, Toronto, Ontario, Canada
 
