@@ -13,7 +13,7 @@
 
 #
 
-[Jingfeng Yao](https://github.com/JingfengYao)<sup>1</sup>, [Xinggang Wang](https://scholar.google.com/citations?user=qNCTLV0AAAAJ&hl=zh-CN)<sup>1 📧</sup>, [Yuehao Song]()<sup>1</sup>, [Huangxuan Zhao]()<sup>2</sup>, [Jun Ma]()<sup>3,4,5</sup>, [Yajie Chen]()<sup>1</sup>, [Wenyu Liu]()<sup>1</sup>, [Bo Wang]()<sup>3,4,5,6,7,📧</sup>
+[Jingfeng Yao](https://github.com/JingfengYao)<sup>1</sup>, [Xinggang Wang](https://scholar.google.com/citations?user=qNCTLV0AAAAJ&hl=zh-CN)<sup>1 📧</sup>, [Yuehao Song]()<sup>1</sup>, [Huangxuan Zhao]()<sup>2</sup>, [Jun Ma]()<sup>3,4,5</sup>, [Yajie Chen]()<sup>1</sup>, [Wenyu Liu]()<sup>1</sup>, [Bo Wang]()<sup>3,4,5,6,7 📧</sup>
 
 <sup>1</sup>School of Electronic Information and Communications, Huazhong University of Science and Technology, Wuhan, Hubei, China
 
@@ -61,7 +61,7 @@ EVA-X has released all experimental code from the paper. Here is our contents; p
 Use EVA-X as your backbone:
 - [Quick Start](#quick-start)
 
-Pre-training and Finetuning:
+Finetuning:
 - [X-ray Image Classification](#classification)
 - [X-ray Image Segmentation](segmentation)
 
