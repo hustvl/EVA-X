@@ -9,7 +9,9 @@
     <img src="figs/poster.png" alt="Poster" width="800">
 </p>
 
-**EVA-X are Vision Transformers (ViTs) pre-trained especially for medical X-ray images. Take them away for your own X-ray tasks!**
+**EVA-X are Vision Transformers (ViTs) pre-trained especially for medical X-ray images.**
+
+**Take them away for your own X-ray tasks!**
 
 #
 
