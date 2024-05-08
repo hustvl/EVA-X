@@ -62,7 +62,7 @@ Use EVA-X as your backbone:
 - [Quick Start](#quick-start)
 
 Finetuning:
-- [X-ray Image Classification](#classification)
+- [X-ray Image Classification](classification)
 - [X-ray Image Segmentation](segmentation)
 
 Interpretability analysis:
@@ -79,11 +79,10 @@ Launch EVA-X with three simple steps. Try EVA-X representations for your own X-r
     ! pip install timm==0.9.0
     ```
 
-3. Initialize EVA-X with simple python codes. You could also check ``eva_x.py`` to modify it for your own X-ray tasks.
+3. Initialize EVA-X with 2-line python codes. You could also check ``eva_x.py`` to modify it for your own X-ray tasks.
     ```
     from eva_x import eva_x_tiny_patch16, eva_x_small_patch16, eva_x_base_patch16
 
-    eva_pt = '/path/to/eva_s_16.pt'
     model = eva_x_small_patch16(pretrained=/path/to/pre-trained)
     ```
 
