@@ -66,15 +66,14 @@ def parse_args():
 
 
 def main():
+    args = parse_args()
 
     # fix the seed for reproducibility
-    seed = 0
+    seed = args.seed
     torch.manual_seed(seed)
     np.random.seed(seed)
     torch.backends.cudnn.benchmark = False
     torch.backends.cudnn.deterministic = True
-
-    args = parse_args()
 
     cfg = Config.fromfile(args.config)
     if args.options is not None:
@@ -142,7 +141,7 @@ def main():
     cfg.model,
     train_cfg=cfg.get('train_cfg'),
     test_cfg=cfg.get('test_cfg'))
-    
+
     if cfg.model.backbone.type == 'ResNet':
         msg = model.backbone.init_weights()
 
