@@ -2,7 +2,7 @@
 
 ## Installation
 
-1. Follow [pre-training installation](../pretrain/README.md#intallation)
+1. Follow [classification installation](../classification/README.md#intallation).
 
 2. Install ``mmsegmentation==0.29.1`` and its corresponding packages. You could install mmsegmentation==0.29.1 from souce by run:
     ```
@@ -36,7 +36,7 @@ NOTE: You should run ``python tools/interpolate14to16`` for EVA-X weights to con
 
 ## Training
 
-All of the configs are saved in ``configs``. Each experiment has been done on a single RTX-3090 GPU. Choose the config and run an experiemnt by run: 
+All of the configs are saved in ``configs``. Each experiment has been done on a single RTX-3090 GPU. Choose the config and run an experiemnt by run:
 ```
 python train.py segmentation/config/eva_x/upernet_eva_x_small_siim_50ep.py
 ```

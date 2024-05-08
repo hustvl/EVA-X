@@ -2,7 +2,26 @@
 
 ## Installation
 
-Please follow [pre-training installation]().
+First, clone the repo and install required packages:
+```bash
+conda create --name evax python=3.8 -y
+conda activate evax
+
+git clone git@github.com:hustvl/EVA-X.git
+cd EVA-X
+pip install -r requirements.txt
+```
+
+Then, install [Apex](https://github.com/NVIDIA/apex#linux) and [xFormer](https://github.com/facebookresearch/xformers#installing-xformers) following the official instruction.
+
+
+Core packages:
+- [Pytorch](https://pytorch.org/) version 1.12.1
+- [torchvision](https://pytorch.org/vision/stable/index.html) version 0.13.0
+- [timm](https://github.com/rwightman/pytorch-image-models) version 0.5.4
+- [DeepSpeed](https://github.com/microsoft/DeepSpeed) version 0.6.5 (`fp16` training and ZeRO optimizer), fine-tuning with `bfloat16` requires version 0.8.1
+- [Apex](https://github.com/NVIDIA/apex) (fused layer norm)
+- [xFormer](https://github.com/facebookresearch/xformers) (fast and memory efficient MHSA)
 
 ## Data Preparation
 
@@ -10,7 +29,7 @@ We have done the most of the work before. You could use the datasets with simple
 
 1. Download [Chest X-Ray14](https://www.kaggle.com/datasets/nih-chest-xrays/data) / [CheXpert](https://www.kaggle.com/datasets/willarevalo/chexpert-v10-small) / [CovidX-CXR-3](https://www.kaggle.com/datasets/andyczhao/covidx-cxr2/versions/5) /  [CovidX-CXR-4](https://www.kaggle.com/datasets/andyczhao/covidx-cxr2) from the given links. (Note: for CovidX dataset, we use the version-5 and version-9.)
 
-2. Prepare them by running the following codes. It will prepare and check the datasets automatically. 
+2. Prepare them by running the following codes. It will prepare and check the datasets automatically.
    ```
    python datasets/prepare_dataset.py
    ```
@@ -25,7 +44,7 @@ If you just want to use EVA-X for medical image classification, you only need to
 | EVA-X Series | Architecture | #Params | Checkpoint | MIM epochs |
 |:------------:|:------------:|:-------:|:----------:|:----------:|
 | <img src="figs/x-ray-logo.png" width="18"> EVA-X-Ti    |  ViT-Ti/16   | 6M      |  [🤗download](https://huggingface.co/MapleF/eva_x/blob/main/eva_x_tiny_patch16_merged520k_mim.pt)| 900 |
-| <img src="figs/x-ray-logo.png" width="18"> EVA-X-S    |  ViT-S/16   | 22M      |  [🤗download](https://huggingface.co/MapleF/eva_x/blob/main/eva_x_small_patch16_merged520k_mim.pt)| 600 | 
+| <img src="figs/x-ray-logo.png" width="18"> EVA-X-S    |  ViT-S/16   | 22M      |  [🤗download](https://huggingface.co/MapleF/eva_x/blob/main/eva_x_small_patch16_merged520k_mim.pt)| 600 |
 | <img src="figs/x-ray-logo.png" width="18"> EVA-X-B    |  ViT-B/16   | 86M      |  [🤗download](https://huggingface.co/MapleF/eva_x/blob/main/eva_x_base_patch16_merged520k_mim.pt)| 600 |
 
 #### Reproduce all methods
@@ -38,7 +57,7 @@ In our experiments, in addition to EVA-X, we *used 15 different visual represent
 | DenseNet121 | 8M | [ImageNet](https://download.pytorch.org/models/densenet121-a639ec97.pth);  [MoCov2](https://drive.google.com/file/d/1idLcwL4C0eSGoLc5PI4ZWHzNLq_mJY-g/view?usp=share_link); [Medical MAE](https://drive.google.com/file/d/1f5KePD48QmHua7C5HBUV3i0PqNPkgmqj/view?usp=share_link) |
 | ViT-S/16 | 22M |[DEiT](https://dl.fbaipublicfiles.com/deit/deit_small_patch16_224-cd65a155.pth); [MAE](https://drive.google.com/file/d/1QeAIWJWuNcccF09502xcnQ_2tbc2jRQG/view?usp=share_link); [EVA-02](https://huggingface.co/Yuxin-CV/EVA-02/blob/main/eva02/pt/eva02_S_pt_in21k_p14.pt); [Medical MAE](https://drive.google.com/file/d/1Yok1RemqP27iKJ5BUuoHhLRBB1GycITx/view?usp=share_link)|
 
-Some weights should be processed for training. We provide codes for them: 
+Some weights should be processed for training. We provide codes for them:
 
 ```
 # process ResNet50s
@@ -57,7 +76,7 @@ We use 4 RTX 3090 GPUs for finetuning. We have fixed most of the randomness. So 
 
 ***Chest X-Ray14***
 
-The reported mAUC is evaluated on the *official test set*. 
+The reported mAUC is evaluated on the *official test set*.
 
 ```
 sh train_files/eva_x/cxr14/vit_ti.sh

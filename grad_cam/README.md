@@ -4,7 +4,7 @@
 
 ## Installation
 
-1. Please follow [pre-training installation]().
+1. Please follow [classification installation](../classification/README.md#intallation).
 
 2. Install amazing repo of [pytorch-grad-cam](https://github.com/jacobgil/pytorch-grad-cam)
 
