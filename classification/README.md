@@ -1,5 +1,7 @@
 <h1 align="center">EVA-X: X-ray Image Classification</h1>
 
+<div style="text-align:center"><img src="figs/cls-result.png" /></div>
+
 ## Installation
 
 First, clone the repo and install required packages:

@@ -1,5 +1,7 @@
 <h1 align="center"> EVA-X: X-Ray Image Segmentation </h1>
 
+<div style="text-align:center"><img src="figs/seg-result.png" /></div>
+
 ## Installation
 
 1. Follow [classification installation](../classification/README.md#intallation).
@@ -43,11 +45,9 @@ python train.py segmentation/config/eva_x/upernet_eva_x_small_siim_50ep.py
 
 ## Results
 
-All models have been finetuned on the same settings. We have uploaded the finetuned weights of EVA-X, evaluate finetuned models by running:
+All models have been finetuned on the same settings. We will upload the finetuned weights of EVA-X, evaluate finetuned models by running:
 
-| Method | Dataset | Config | Dice | Jaccard | Checkpoint |
-|:------:|:-------:|:------:|:----:|:-------:|:----------:|
-| EVA-X  | SIIM-ACR |[config](config/eva_x/upernet_eva_x_small_siim_50ep.py) | **63.4** | **46.4** | [🤗download](https://huggingface.co/MapleF/eva_x/blob/main/vit_s_upernet_eva_x_merged520k_mim_siim_ft.pth) |
+**Weights are coming soon...**
 
 ```
 python test.py segmentation/config/eva_x/upernet_eva_x_small_siim_50ep.py \
