@@ -19,7 +19,7 @@ from timm.data.mixup import Mixup
 import timm.optim.optim_factory as optim_factory
 import utils.lr_decay as lrd
 import utils.misc as misc
-from util.lars import LARS
+from utils.lars import LARS
 from utils import  build_dataset_chest_xray, \
                   interpolate_pos_embed, RASampler, NativeScaler
 from models import models_eva, models_vit
@@ -44,7 +44,7 @@ def get_args_parser():
 
     parser.add_argument('--drop_path', type=float, default=0.1, metavar='PCT',
                         help='Drop path rate (default: 0.1)')
-    
+
     # linear probe
     parser.add_argument('--linear_probe', action='store_true')
 
@@ -280,7 +280,7 @@ def main(args):
             attn_drop_rate=args.attn_drop_rate,
             drop_block_rate=None,
             use_mean_pooling=args.use_mean_pooling,
-            use_checkpoint=args.use_checkpoint, 
+            use_checkpoint=args.use_checkpoint,
             stop_grad_conv1=args.stop_grad_conv1,
         )
     else:
@@ -360,6 +360,14 @@ def main(args):
                         new_state_dict[new_key] = value
                         # print(key, 'to', new_key)
                 checkpoint_model = new_state_dict
+            if "fc.weight" in checkpoint_model.keys():
+                checkpoint_model.pop('fc.weight')
+            if "fc.bias" in checkpoint_model.keys():
+                checkpoint_model.pop('fc.bias')
+            if "classifier.weight" in checkpoint_model.keys():
+                checkpoint_model.pop("classifier.weight")
+            if "classifier.bias" in checkpoint_model.keys():
+                checkpoint_model.pop("classifier.bias")
             msg = model.load_state_dict(checkpoint_model, strict=False)
             print(msg)
         # initialize eva model (advanced vits)
@@ -493,7 +501,7 @@ def main(args):
                 misc.save_model(
                     args=args, model=model, model_without_ddp=model_without_ddp, optimizer=optimizer,
                     loss_scaler=loss_scaler, epoch='best')
-            
+
             print(f"Average AUC on the test set images: {test_stats['auc_avg']:.4f}")
             max_auc = max(max_auc, test_stats['auc_avg'])
             print(f'Max Average AUC: {max_auc:.4f}', {max_auc})
@@ -517,7 +525,7 @@ def main(args):
                     log_writer.flush()
                 with open(os.path.join(args.output_dir, "log.txt"), mode="a", encoding="utf-8") as f:
                     f.write(json.dumps(log_stats) + "\n")
-            
+
             if args.output_dir and misc.is_main_process() and epoch + 1 == args.epochs:
                 # save max auc
                 with open(os.path.join(args.output_dir, "log.txt"), mode="a", encoding="utf-8") as f:
