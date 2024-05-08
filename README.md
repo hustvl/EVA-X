@@ -47,6 +47,8 @@
 
 The diagnosis and treatment of chest diseases play a crucial role in maintaining human health. X-ray examination has become the most common clinical examination means due to its efficiency and cost-effectiveness. Artificial intelligence analysis methods for chest X-ray images are limited by insufficient annotation data and varying levels of annotation, resulting in weak generalization ability and difficulty in clinical dissemination. Here we present EVA-X, an innovative foundational model based on X-ray images with broad applicability to various chest disease detection tasks. EVA-X is the first X-ray image based self-supervised learning method capable of capturing both semantic and geometric information from unlabeled images for universal X-ray image representation. Through extensive experimentation, EVA-X has demonstrated exceptional performance in chest disease analysis and localization, becoming the first model capable of spanning over 20 different chest diseases and achieving leading results in over 11 different detection tasks in the medical field. Additionally, EVA-X significantly reduces the burden of data annotation in the medical AI field, showcasing strong potential in the domain of few-shot learning. The emergence of EVA-X will greatly propel the development and application of foundational medical models, bringing about revolutionary changes in future medical research and clinical practice.
 
+#
+
 <p align="center">
     <img src="figs/pipeline.png" alt="Overall Architecture" width="800">
 </p>
