@@ -70,7 +70,7 @@ Interpretability analysis:
 
 ## Quick Start
 
-Launch EVA-X with three simple steps. Try EVA-X representations for your own X-rays!
+**Countdown 3, 2, 1. Launch EVA-X.**
 
 1. Download pre-trained weights.
 
@@ -85,6 +85,7 @@ Launch EVA-X with three simple steps. Try EVA-X representations for your own X-r
 
     model = eva_x_small_patch16(pretrained=/path/to/pre-trained)
     ```
+Try EVA-X representations for your own X-rays!
 
 ## Acknowledgements
 
