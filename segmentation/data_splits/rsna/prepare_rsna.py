@@ -7,7 +7,7 @@ from PIL import Image
 import pandas as pd
 from PIL import ImageDraw, ImageFont
 
-def convert_dcm_to_jpg(source_folder, img_folder, mask_folder, csv_file='/data/jingfengyao/datasets/rsna_pneumonia/stage_2_train_labels.csv', 
+def convert_dcm_to_jpg(source_folder, img_folder, mask_folder, csv_file='/data/jingfengyao/datasets/rsna_pneumonia/stage_2_train_labels.csv',
                        train_file='data_splits/rsna/train.txt', test_file='data_splits/rsna/test.txt'):
     # Create the destination folders if they don't exist
     if not os.path.exists(img_folder):
@@ -20,14 +20,14 @@ def convert_dcm_to_jpg(source_folder, img_folder, mask_folder, csv_file='/data/j
         os.makedirs(os.path.join(img_folder, 'train'))
     if not os.path.exists(os.path.join(img_folder, 'test')):
         os.makedirs(os.path.join(img_folder, 'test'))
-    if not os.path.exists(os.path.join(mask_folder, 'train')):  
+    if not os.path.exists(os.path.join(mask_folder, 'train')):
         os.makedirs(os.path.join(mask_folder, 'train'))
     if not os.path.exists(os.path.join(mask_folder, 'test')):
         os.makedirs(os.path.join(mask_folder, 'test'))
 
     # Get a list of all DICOM files in the source folder
     dcm_files = [file for file in os.listdir(source_folder) if file.endswith('.dcm')]
-    
+
     def read_csv(csv_file):
         # Read the CSV file
         df = pd.read_csv(csv_file)
@@ -62,14 +62,15 @@ def convert_dcm_to_jpg(source_folder, img_folder, mask_folder, csv_file='/data/j
         with open(test_file, 'r') as f:
             test_ids = f.read().splitlines()
     except:
-        # print in red
-        print('\033[91m' + 'Error: train.txt or test.txt not found!' + '\033[0m')
+        raise FileNotFoundError(f"Train_file: {train_file} or test_file: {test_file} don't exist, check the split file.")
+        # # print in red
+        # print('\033[91m' + 'Error: train.txt or test.txt not found!' + '\033[0m')
 
-        # randomly split the data into train and test
-        all_ids = [file.replace('.dcm', '') for file in dcm_files]
-        np.random.shuffle(all_ids)
-        train_ids = all_ids[:int(0.7 * len(all_ids))]
-        test_ids = all_ids[int(0.7 * len(all_ids)):]
+        # # randomly split the data into train and test
+        # all_ids = [file.replace('.dcm', '') for file in dcm_files]
+        # np.random.shuffle(all_ids)
+        # train_ids = all_ids[:int(0.7 * len(all_ids))]
+        # test_ids = all_ids[int(0.7 * len(all_ids)):]
 
     for i, dcm_file in tqdm(enumerate(dcm_files)):
         # Read the DICOM file
