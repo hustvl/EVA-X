@@ -101,7 +101,7 @@ Our codes are built upon [EVA](https://github.com/baaivision/EVA/tree/master/EVA
 If you find our work useful, please consider to cite:
 ```
 @article{eva_x,
-  title={Matte Anything: Interactive Natural Image Matting with Segment Anything Models},
+  title={EVA-X: A Foundation Model for General Chest X-ray Analysis with Self-supervised Learning},
   author={Yao, Jingfeng and Wang, Xinggang and Yuehao, Song and Huangxuan, Zhao and Jun, Ma and Yajie, Yang and Wenyu, Liu and Bo, Wang},
   journal={arXiv preprint arXiv:2405.05237},
   year={2024}
