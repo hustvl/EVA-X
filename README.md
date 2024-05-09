@@ -22,6 +22,7 @@
 
 (<sup>📧</sup>) corresponding author.
 
+[![arxiv paper](https://img.shields.io/badge/arxiv-paper-orange)](https://arxiv.org/abs/2405.05237)
 [![license](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 [![authors](https://img.shields.io/badge/by-hustvl-green)](https://github.com/hustvl)
 
@@ -29,7 +30,7 @@
 
 ## News
 
-* **`May 08th, 2024`:**  EVA-X is realsed!
+* **`May 08th, 2024`:**  EVA-X is realsed! We have released our codes and [arxiv paper](https://arxiv.org/abs/2405.05237).
 
 ## Introduction
 
