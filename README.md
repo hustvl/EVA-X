@@ -96,3 +96,14 @@ Try EVA-X representations for your own X-rays!
 ## Acknowledgements
 
 Our codes are built upon [EVA](https://github.com/baaivision/EVA/tree/master/EVA-01), [EVA-02](https://github.com/baaivision/EVA/tree/master/EVA-02), [MGCA](https://github.com/HKU-MedAI/MGCA), [Medical MAE](https://github.com/lambert-x/medical_mae), [mmsegmentation](https://github.com/open-mmlab/mmsegmentation), [timm](https://github.com/huggingface/pytorch-image-models), [segmentation_models_pytorch](https://github.com/qubvel/segmentation_models.pytorch), [pytorch_grad_cam](https://github.com/jacobgil/pytorch-grad-cam) Thansk for these great repos!
+
+## Citation
+If you find our work useful, please consider to cite:
+```
+@article{eva_x,
+  title={Matte Anything: Interactive Natural Image Matting with Segment Anything Models},
+  author={Yao, Jingfeng and Wang, Xinggang and Yuehao, Song and Huangxuan, Zhao and Jun, Ma and Yajie, Yang and Wenyu, Liu and Bo, Wang},
+  journal={arXiv preprint arXiv:2405.05237},
+  year={2024}
+}
+```
