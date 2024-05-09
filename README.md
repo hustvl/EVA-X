@@ -60,9 +60,28 @@ The diagnosis and treatment of chest diseases play a crucial role in maintaining
 | <img src="figs/logo.png" height="17"> EVA-X-S    |  ViT-S/16   | 22M      |  [🤗download](https://huggingface.co/MapleF/eva_x/blob/main/eva_x_small_patch16_merged520k_mim.pt)|MGCA-ViT-B/16 | 600 |
 | <img src="figs/logo.png" height="17"> EVA-X-B    |  ViT-B/16   | 86M      |  [🤗download](https://huggingface.co/MapleF/eva_x/blob/main/eva_x_base_patch16_merged520k_mim.pt)|MGCA-ViT-B/16 | 600 |
 
+## Quick Start
+
+**Countdown 3, 2, 1. Launch EVA-X! 🚀**
+
+- Download pre-trained weights.
+
+- Install [pytorch_image_models](https://github.com/huggingface/pytorch-image-models)
+    ```
+    ! pip install timm==0.9.0
+    ```
+
+- Initialize EVA-X with 2-line python codes. You could also check ``eva_x.py`` to modify it for your own X-ray tasks.
+    ```
+    from eva_x import eva_x_tiny_patch16, eva_x_small_patch16, eva_x_base_patch16
+
+    model = eva_x_small_patch16(pretrained=/path/to/pre-trained)
+    ```
+Try EVA-X representations for your own X-rays!
+
 ## Contents
 
-EVA-X has released all experimental code from the paper. Here is our contents; please refer to the corresponding sections as needed.
+EVA-X has released all experimental code from the paper. Here is our contents. **Please click 👉 and refer to the corresponding subsections as needed.**
 
 Use EVA-X as your backbone:
 - [Quick Start](#quick-start)
@@ -73,25 +92,6 @@ Finetuning:
 
 Interpretability analysis:
 - [Grad-CAM Analysis](grad_cam)
-
-## Quick Start
-
-**Countdown 3, 2, 1. Launch EVA-X.**
-
-1. Download pre-trained weights.
-
-2. Install [pytorch_image_models](https://github.com/huggingface/pytorch-image-models)
-    ```
-    ! pip install timm==0.9.0
-    ```
-
-3. Initialize EVA-X with 2-line python codes. You could also check ``eva_x.py`` to modify it for your own X-ray tasks.
-    ```
-    from eva_x import eva_x_tiny_patch16, eva_x_small_patch16, eva_x_base_patch16
-
-    model = eva_x_small_patch16(pretrained=/path/to/pre-trained)
-    ```
-Try EVA-X representations for your own X-rays!
 
 ## Acknowledgements
 
