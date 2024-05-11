@@ -62,7 +62,7 @@ The diagnosis and treatment of chest diseases play a crucial role in maintaining
 
 ## Quick Start
 
-**Countdown 3, 2, 1. Launch EVA-X! 🚀**
+Countdown 3, 2, 1. Launch EVA-X! 🚀
 
 - Download pre-trained weights.
 
@@ -81,7 +81,7 @@ Try EVA-X representations for your own X-rays!
 
 ## Contents
 
-EVA-X has released all experimental code from the paper. Here is our contents. **Please click 👉 and refer to the corresponding subsections as needed.**
+EVA-X has released all experimental code from the paper. Here is our contents. Please click 👉 and refer to the corresponding subsections as needed.
 
 Use EVA-X as your backbone:
 - [Quick Start](#quick-start)
