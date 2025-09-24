@@ -1,4 +1,4 @@
-<div align="center">
+<img width="942" height="147" alt="image" src="https://github.com/user-attachments/assets/a7add65f-94ea-40f6-8bb5-87352b9724e8" /><div align="center">
 
 #  <img src="figs/logo.png" height="28"> *EVA-X*
 
@@ -30,7 +30,7 @@
 
 ## News
 
-* **`Sep. 24th, 2025`:**  EVA-X has been acccepted by [npj Digital Medicine](https://www.nature.com/npjdigitalmed/)!
+* **`Sep. 24th, 2025`:**  EVA-X has been acccepted by [npj Digital Medicine](https://www.nature.com/npjdigitalmed/) (**Nature** Partner Journals)!
 
 * **`May 08th, 2024`:**  EVA-X is realsed! We have released our codes and [arxiv paper](https://arxiv.org/abs/2405.05237).
 
