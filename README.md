@@ -30,6 +30,8 @@
 
 ## News
 
+* **`Sep. 24th, 2025`:**  EVA-X has been acccepted by [npj Digital Medicine](https://www.nature.com/npjdigitalmed/)!
+
 * **`May 08th, 2024`:**  EVA-X is realsed! We have released our codes and [arxiv paper](https://arxiv.org/abs/2405.05237).
 
 ## Introduction
